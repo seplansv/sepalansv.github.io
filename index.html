@@ -1,0 +1,1527 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+<style type="text/css">
+
+	.body{
+
+		font-family: "Raleway";
+		background-color: #fff5f5;
+		-webkit-font-feature-settings: "lnum"; 
+  		-moz-font-feature-settings: "lnum"; 
+  		font-feature-settings: "lnum";
+  		align-items: center;
+  		max-width: 99%;
+  		min-width: 99%;
+	}
+
+	.header
+	{
+		background-color: white;
+		width: 101%;
+		height: 60px;
+		margin-top: -10px;
+		margin-left: -0.6%;
+		align-items: center;		
+		box-shadow: 0px 0px 10px 1px rgba(143, 0, 0, 0.3);
+		
+	}
+
+	
+	.brasao
+	{
+		width: auto;
+		height: 100%;
+		box-sizing: border-box;
+		padding-left: 7.5%;
+
+	}
+
+	
+
+	.container_cards
+	{
+		width: 85%;
+		height: 300px;
+		margin:0 auto 0 auto;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.container_vac
+	{
+		max-width: 100%;
+		min-width: 100%;
+		max-height: 80%;
+		min-height: 80%;
+		background-color: #f2f2f2;
+		margin:0 auto 0 auto;
+		display: flex;
+		text-align: center;
+		text-align: center;
+		align-items: center;
+		flex-direction: column;
+
+	}
+
+	.legenda
+	{
+		
+		font-size: 15px;
+	}
+
+	.legenda_vac
+	{
+		
+		font-size: 20px;
+	}
+
+	.numero
+	{
+		font-size: 35px;
+		  font-weight: bold;
+
+	}
+
+	.numero2
+	{
+		font-size: 35px;
+		  font-weight: medium;
+		  padding-left: 20px;
+	}
+
+	.numero_vac
+	{
+		font-size: 35px;
+		vertical-align: text-bottom;
+	}
+
+	.numero_mmovel
+	{
+		font-size: 32px;
+		  font-weight: medium;
+		 margin: auto 0 auto 0;
+		 padding-left: 10;
+		  line-height: 10px;
+		  
+		  
+	}
+
+	.numero_mmovel_status
+	{
+		font-size: 25px;
+		  font-weight: medium;
+		 
+
+	}
+
+	.titulo
+	{
+		margin-bottom: 30;
+		  font-weight: bold;
+		font-size: 23px;
+		color: #ff0000;
+	}
+
+	.graficovacina
+	{
+		margin-left: -50;
+	}
+
+	.subquadro_mmovel
+	{
+		display: flex;	
+	}
+
+	.titulo_topo
+	{
+		font-weight: bold;
+		color: #404040;
+		font-size: 50px;
+
+	}
+
+	.legenda_titulo
+	{
+		font-weight: 400;
+		font-size: 23px;
+		color: #7A7574;
+		vertical-align: text-top;
+		margin-top: -45px;
+
+	}
+
+	.espaco_interno{
+		height: 60px;
+	}
+
+	.topo
+	{
+		width: 100%;
+		height: 200px;
+
+
+	}
+
+	.topo3
+	{
+		
+		max-width: 100%;
+		min-width: 100%;
+		align-items: left;
+		display: flex;
+		flex-direction: column;
+		padding-left: 7.5%;
+		padding-top: 7.5%;
+		box-sizing: border-box;
+
+	}
+
+	.quadro_mmovel{
+		padding-left: 50;
+		box-sizing: border-box;
+
+	}
+
+	.titulo_grafico
+	{
+		font-size: 25px;
+		color: #ff0000;
+		font-weight: bold;
+		display: flex;
+		text-align: center;
+		padding-left: 20px;
+		line-height: 10px;
+		box-sizing: border-box;
+	}
+
+	.container_graficos
+	{
+		display: flex;
+		justify-content: center;
+		max-width: 100%;
+		min-width: 100%;
+	}
+
+	.quuadro_graficos
+	{
+		max-width: 85%;
+		min-width: 85%;
+		max-height: 500px;
+		min-height: 500px;
+		background-color: #FFFFFF;
+		border-radius: 15px 15px 15px 15px;
+		box-shadow: 0px 0px 5px 1px rgba(143, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container
+	{
+		width: 100%;
+		height: 400px;
+		background-color: #f2f2f2;
+		margin:0 auto 0 auto;
+		display: flex;
+		flex-direction: row;
+		text-align: center;
+		text-align: center;
+		align-items: center;		
+		justify-content: center;
+	}
+
+	.subcontainer
+	{
+		width: 47%;
+		height: 90%;
+	}
+
+
+	.espaco_sessoes
+	{
+		height: 50px;
+	}
+
+	.legenda_fonte
+	{
+		font-size: 13px;
+		color: #707070;
+		padding-left: 30;
+		box-sizing: border-box;
+	}
+
+	
+	.grafico_vacina
+	{
+		width: 70%;
+		height: 20%;
+		display: flex;
+		margin: 0 auto 0 auto;
+	}
+
+	.graficos_leitos
+	{
+
+		min-width: 100%;
+		max-width: 100%; 
+		min-height: 300px;
+		max-height: 300px;
+	}
+
+	.subcontainer_leitos
+	{
+		min-width: 50%;
+		max-width: 50%; 
+		min-height: 100%;
+		max-height: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-top: 4%;		
+		box-sizing: border-box;
+	}
+	
+
+	.legenda_leitos
+	{
+		
+		
+		font-weight: medium;
+		font-size: 15px;
+		color: #303030;
+		text-align: center;
+	}
+
+	.subcontainer_vacinas
+	{
+		max-width: 100%;
+		min-width: 80%;
+		height: 50%;
+		display: flex;	
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		padding-left: 7%;	
+		padding-top: 10%;
+		box-sizing: border-box;
+	}
+
+	.totalizador_vac
+	{
+		display: flex;
+		height: auto;
+		min-width: 30%;
+		flex-direction: column;
+		text-align: left;
+		max-width: 30%;
+	}
+
+	.subcontainer1{
+		display: flex;
+		text-align: left;
+		flex-direction: row;
+		height: auto;
+		width: auto;
+	}
+
+
+
+	.card
+	{
+		min-width: 30%;
+		max-width: 30%;
+		height: 170px;
+		background-color: white;
+		padding-left: 2%;
+		padding-bottom: 2%;
+		text-align: left;
+		box-sizing: content-box;
+		border-radius: 10px 10px 10px 10px;
+		box-shadow: 0px 0px 10px 1px rgba(143, 0, 0, 0.1);
+	}
+
+	.subcard
+	{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-around;
+		max-height: 80%;
+		min-height: 80%;
+		max-width: 100%;
+		min-width: 100%;
+		
+	}
+
+	.titulo_card
+	{
+	
+
+		padding-top: 5%;
+		padding-bottom: 3.5%;
+		  font-weight: bold;
+		font-size: 23px;
+		color: #ff0000;
+		box-sizing: border-box;
+	}
+
+	.totalizadores
+	{
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-height: 100%;
+		min-height: 100%;
+		max-width: 40%;
+		min-width: 40%;
+		padding-left: 7%;
+		text-align: left;
+		box-sizing: border-box;
+	}
+
+	.totalizador
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		max-height: auto;
+		min-height: auto;
+		max-width: auto;
+		min-width: auto;
+	}
+
+	.numeros
+	{
+		vertical-align: bottom;
+		font-size: 32px;
+		font-weight: bold;
+	}
+
+	.numeros_mmovel_percent
+	{
+		font-size: 30px;
+		font-weight: medium;
+		padding-left: 10;
+		box-sizing: border-box;
+	}
+
+	.numero_mmovel_status
+	{
+		font-size: 22px;
+		font-weight: medium;
+	}
+
+
+
+
+
+@media (max-width: 1100px)
+{
+		.card
+	{
+		min-width: 30%;
+		max-width: 30%;
+		max-height: auto;
+		min-height: 331px;
+		background-color: white;
+		padding-left: 2%;
+		padding-bottom: 2%;
+		text-align: left;
+		box-sizing: content-box;
+		margin-bottom: 2%;
+	}
+
+	.subcard
+	{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-around;
+		max-height: 80%;
+		min-height: 80%;
+		max-width: 100%;
+		min-width: 100%;
+		
+	}
+
+	.container_cards
+	{
+		height: auto;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.totalizador
+	{
+		padding-top: 5%;
+		box-sizing: border-box;
+	}
+}
+
+@media (max-width: 750px)
+{
+	
+	.container_cards
+	{
+		height: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card
+	{	margin-top: 2%; 
+		margin-bottom: 2%;
+		min-width: 85%;
+		max-width: 85%;
+		min-height: 200px;
+		max-height: auto;
+		background-color: white;
+		padding-left: 5%;
+		padding-bottom: 7%;
+		text-align: left;
+		box-sizing: content-box;
+	}
+
+	.titulo_grafico
+	{
+		font-size: 27px;
+		color: #ff0000;
+		font-weight: bold;
+		display: flex;
+		text-align: left;
+		padding-left: 20px;
+		max-height: 10%;
+		min-height: 10%;
+		box-sizing: border-box;
+   
+
+	}
+
+	.quuadro_graficos
+	{
+		max-width: 90%;
+		min-width: 90%;
+		max-height: 850px;
+		min-height: 850px;
+		background-color: #FFFFFF;
+		border-radius: 15px 15px 15px 15px;
+		box-shadow: 0px 0px 5px 1px rgba(143, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+
+	}
+	
+
+	.container
+	{
+		width: 100%;
+		height: 85%;
+		background-color: #f2f2f2;
+		margin:0 auto 0 auto;
+		display: flex;
+		flex-flow: column wrap;
+		text-align: center;
+		text-align: center;
+		align-items: center;		
+		justify-content: center;
+
+	}
+
+	.subcontainer
+	{
+		width:95%;
+		height: 50%;
+
+	}
+
+	.subcontainer_vacinas
+	{
+		max-width: 100%;
+		min-width: 80%;
+		padding-left: 0%;
+		height: auto;
+		display: flex;	
+		flex-flow: column wrap;
+		justify-content: space-between;
+		align-items: center;	
+		box-sizing: border-box;
+	}
+
+	.totalizador_vac
+	{
+		display: flex;
+		height: auto;
+		min-width: 90%;
+		max-width: 90%;
+		flex-direction: column;
+		text-align: center;
+		padding-top: 10%;
+		box-sizing: border-box;
+	}
+
+	.subcontainer_leitos
+	{
+		min-width: 100%;
+		max-width: 100%; 
+		min-height: 50%;
+		max-height: 50%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-top: 2%;
+		box-sizing: border-box;
+	}
+
+	.header
+	{
+		margin-left: -8.5px;
+
+	}
+}
+
+</style>
+
+<script type="text/javascript">
+
+			const api_url = 'https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv';
+			const api2_url = 'https://raw.githubusercontent.com/seplansv/covidsv/main/covid_sv.csv';
+			var ylabels_novoscasos = new Array();
+			var ylabels_totalcasos = new Array();
+			var ylabels_totalobitos = new Array();
+			var xlabels_data = new Array();
+			var ylabels_novosobitos = new Array();
+			var line_novoscasos = new Array();
+			var line_novosobitos = new Array();
+			var ylabels_letalidade = new Array();
+			var xlabels_semanaepi = new Array();
+			var xlabels_semanaepi1 = new Array();
+			var ylabels_casos_semaepi = new Array();
+			var ylabels_obitos_semaepi = new Array();
+
+
+			var xlabels_data2 = new Array();
+			var ylabels_1dose = new Array();
+			var ylabels_2dose = new Array();
+			var ylabels_ocupenfermaria = new Array();
+			var ylabels_ocuputi = new Array();
+			var ylabels_dosesdistri = new Array();
+			var ylabels_iisolamento = new Array();
+			var ylabels_testes = new Array();
+			var ylabels_novoscasos_sv = new Array();
+			var ylabels_totalcasos_sv = new Array();
+			var ylabels_novosobitos_sv =new Array();
+			var ylabels_totalobitos_sv = new Array();
+			var ylabels_atualizacao = new Array ();
+
+
+
+		async function get_data()
+		{
+
+			const response = await fetch(api_url);
+			const data = await response.text();
+			var linha_municipio;
+
+
+			const response2 =await fetch(api2_url);
+			const data2 = await response2.text();
+
+			
+
+			const linhas = data.split('\n').slice(1);
+			const linhas_2 = data2.split('\n').slice(1);
+			
+
+
+		linhas_2.forEach(elt =>
+		{
+			const linha_2 = elt.split(',')
+
+
+				if(linha_2 != '')
+				{
+					
+				
+			
+
+				var dtime_2 = linha_2[0];
+				var casos_novos_sv = linha_2[1];
+				var casos_totais_sv = linha_2[2];
+				var obitos_novos_sv = linha_2[3];
+				var obitos_totais_sv = linha_2[4];
+				var ocup_enfer = linha_2[5];
+				var ocup_uti = linha_2[6];
+				var testes = linha_2[7];
+				var dose_1  = linha_2[8];
+				var dose_2 = linha_2[9];
+				var doses_distri = linha_2[10];
+				var iisolamento = linha_2[12];
+				var ult_atuali = linha_2[13];
+
+				
+				
+				 xlabels_data2.push(dtime_2);
+				 ylabels_novoscasos_sv.push(parseFloat(casos_novos_sv));
+				 ylabels_totalcasos_sv.push(parseFloat(casos_totais_sv));
+				 ylabels_novosobitos_sv.push(parseFloat(obitos_novos_sv));
+				 ylabels_totalobitos_sv.push(parseFloat(obitos_totais_sv))
+			 	ylabels_1dose.push(parseFloat(dose_1));
+			 	ylabels_2dose.push(parseFloat(dose_2))
+			 	ylabels_ocupenfermaria.push(parseFloat(ocup_enfer));
+		 		ylabels_ocuputi.push(parseFloat(ocup_uti));
+			 	ylabels_dosesdistri.push(parseFloat(doses_distri));
+			 	ylabels_testes.push(parseFloat(testes));
+			 	ylabels_iisolamento.push(parseFloat(iisolamento));
+			 	ylabels_atualizacao.push(ult_atuali);
+			 }
+		});
+
+
+	
+			linhas.forEach(elt =>
+		{
+			const linha = elt.split(';') 
+			
+			if(linha[1] == "3551009")
+			{
+				linha_municipio = linha;
+				var dtime = linha[4];
+				var dia = linha[2];
+				var mes = linha[3];
+				var casos_novos = linha[6];
+				var casos_totais = linha[5];
+				var obitos_novos = linha [10];
+				var obitos_totais = linha [9];
+				var mm7_casos = linha [8];
+				var mm7_obitos = linha [12];
+				var letalidade = linha [13];
+				var semana_epi = linha[25];
+
+				
+				xlabels_data.push(dtime);
+				ylabels_novoscasos.push(parseFloat(casos_novos));
+				ylabels_novosobitos.push(parseFloat(obitos_novos));
+				ylabels_totalobitos.push(parseFloat(obitos_totais));
+				ylabels_totalcasos.push(parseFloat(casos_totais));
+				line_novoscasos.push(parseFloat(mm7_casos));
+				line_novosobitos.push(parseFloat(mm7_obitos));
+				ylabels_letalidade.push(parseFloat(letalidade));
+				xlabels_semanaepi.push(parseFloat(semana_epi));
+				
+
+			}
+		}
+
+
+
+
+		);
+
+
+		var soma_casos =0.
+		var a=0;
+		var semana_epi1;
+
+			for(var i=0;i<xlabels_semanaepi.length;i++)
+		{		
+				
+				
+				
+				if(i==0)
+				{
+					soma_casos = ylabels_novoscasos [0];
+					semana_epi1 = xlabels_semanaepi[0];
+					
+				}
+				else{
+
+				
+				if(xlabels_semanaepi[i]==xlabels_semanaepi[i-1])
+				{
+					soma_casos = soma_casos + ylabels_novoscasos[i];
+
+
+					if(i==(xlabels_semanaepi.length-1))
+					{
+						ylabels_casos_semaepi[a]=soma_casos;
+						xlabels_semanaepi1[a] = xlabels_semanaepi[i];
+						
+					}
+				}
+				else
+				{
+					
+					
+					ylabels_casos_semaepi[a]=soma_casos;
+					soma_casos = 0;
+					xlabels_semanaepi1[a]=xlabels_semanaepi[i-1];
+					a++;
+					
+					soma_casos=ylabels_novoscasos[i];
+				}
+			}
+
+		}
+
+
+		var soma_obitos =0.
+		var a=0;
+		var semana_epi1;
+
+			for(var i=0;i<xlabels_semanaepi.length;i++)
+		{		
+				
+				
+				
+				if(i==0)
+				{
+					soma_obitos = ylabels_novosobitos [0];
+					semana_epi1 = xlabels_semanaepi[0];
+					
+				}
+				else{
+
+				
+				if(xlabels_semanaepi[i]==xlabels_semanaepi[i-1])
+				{
+					soma_obitos = soma_obitos + ylabels_novosobitos[i];
+
+
+					if(i==(xlabels_semanaepi.length-1))
+					{
+						ylabels_obitos_semaepi[a]=soma_obitos;
+
+
+						
+					}
+				}
+				else
+				{
+					
+					
+					ylabels_obitos_semaepi[a]=soma_obitos;
+					soma_obitos = 0;
+					xlabels_semanaepi1[a]=xlabels_semanaepi[i-1];
+					a++;
+					
+					soma_obitos=ylabels_novosobitos[i];
+				}
+			}
+
+		
+		}
+
+		var mmovel_casos_sv;
+		var soma1 = 0;
+		var soma = 0;
+
+		for(var i=0; i<=7;i++)
+		{
+			var soma1 = ylabels_novoscasos_sv[ylabels_novoscasos_sv.length-1-i] +soma1;
+
+			var soma = ylabels_novosobitos_sv[ylabels_novosobitos_sv.length-1-i] 
+				+soma;
+
+		}
+
+		mmovel_casos_sv = soma1/7;
+		mmovel_obitos_sv = soma/7;
+
+
+}
+
+
+
+
+
+		window.onload = async function(){
+
+			await get_data();
+
+			var letalidadea = ylabels_totalobitos_sv[ylabels_totalobitos_sv.length-1]/ylabels_totalcasos_sv[ylabels_totalcasos_sv.length-1]*100;
+			 var letalidadeb = letalidadea.toFixed(2);
+
+			 var status_mmovelcasos;
+			 var sinal_mmovelcasos;
+			 var simbolo_mmovelstatus;
+			 var vari_mmovelcasos = ((line_novoscasos[line_novoscasos.length-1])/(line_novoscasos[line_novoscasos.length-8])-1)*100;
+			 vari_mmovelcasos = vari_mmovelcasos.toFixed(1);
+
+			 var prop_testes = ylabels_testes[ylabels_testes.length-1]/ylabels_totalcasos[ylabels_totalcasos.length-1];
+			 prop_testes = prop_testes.toFixed(1);
+			
+			 
+
+			 if(vari_mmovelcasos>15)
+			 {
+			 	status_mmovelcasos = "aceleração";
+			 	simbolo_mmovelstatus = "▲";
+
+			 }
+			 else
+			 	{
+			 		if(vari_mmovelcasos<-15)
+			 		{
+			 			status_mmovelcasos = "queda";
+			 			simbolo_mmovelstatus = "▼";
+			 		}
+			 		else
+			 		{
+			 			status_mmovelcasos = "estabilidade";
+			 			simbolo_mmovelstatus = "▬";
+
+			 		}
+			 	}
+
+			 	if (vari_mmovelcasos>0) {
+			 		sinal_mmovelcasos = "+";
+			 	}
+			 	else
+			 	{
+			 		sinal_mmovelcasos = "";
+			 	}
+
+			 	var status_mmovelobitos;
+			 	var sinal_mmovelobitos;
+			 	var simbolo_mmovelobitos_status;
+				 var vari_mmovelobitos = ((line_novosobitos[line_novosobitos.length-1])/(line_novosobitos[line_novosobitos.length-8])-1)*100;
+				var vari_mmovelobitos = vari_mmovelobitos.toFixed(1);
+
+
+			 if(vari_mmovelobitos>15)
+			 {
+			 	status_mmovelobitos = "aceleração";
+			 	simbolo_mmovelobitos_status = "▲";
+
+			 }
+			 else
+			 	{
+			 		if(vari_mmovelcasos<-15)
+			 		{
+			 			status_mmovelobitos = "queda";
+			 			simbolo_mmovelobitos_status = "▼";
+			 		}
+			 		else
+			 		{
+			 			status_mmovelobitos = "estabilidade";
+			 			simbolo_mmovelobitos_status = "▬";
+
+			 		}
+			 	}
+
+			 	if (vari_mmovelobitos>0) {
+			 		sinal_mmovelobitos = "+";
+			 	}
+			 	else
+			 	{
+			 		sinal_mmovelobitos = "";
+			 	}
+
+
+
+			
+
+		document.getElementById("casos_novos").innerHTML = ylabels_novoscasos_sv[ylabels_novoscasos_sv.length-1];
+		document.getElementById("obitos_totais").innerHTML = ylabels_totalobitos_sv[ylabels_totalobitos_sv.length-1];
+		document.getElementById("casos_totais").innerHTML = ylabels_totalcasos_sv[ylabels_totalcasos_sv.length-1];
+		document.getElementById("obitos_novos").innerHTML = ylabels_novosobitos[ylabels_novosobitos_sv.length-1];
+		document.getElementById("letalidade").innerHTML = letalidadeb + "%";
+		document.getElementById("mmovel_casos").innerHTML = line_novoscasos[line_novoscasos.length-1];
+		document.getElementById("mmovel_casos_percent").innerHTML = "("+sinal_mmovelcasos+vari_mmovelcasos+"%)";
+		document.getElementById("mmovel_casos_status").innerHTML = status_mmovelcasos + " "+simbolo_mmovelstatus;
+
+		document.getElementById("mmovel_obitos").innerHTML = line_novosobitos[line_novosobitos.length-1];
+		document.getElementById("mmovel_obitos_percent").innerHTML = "("+sinal_mmovelobitos+vari_mmovelobitos+"%)";
+		document.getElementById("mmovel_obitos_status").innerHTML = status_mmovelobitos + " "+simbolo_mmovelobitos_status;
+
+
+		document.getElementById("idc_isolamento").innerHTML = ylabels_iisolamento[ylabels_iisolamento.length-1] + "%";
+		document.getElementById("testes_totais").innerHTML = ylabels_testes[ylabels_testes.length-1];
+		document.getElementById("testes_ppositivos").innerHTML = prop_testes;
+
+
+
+
+		var ctx3 = document.getElementById('grafico_novoscasos').getContext('2d');
+
+		var myChart3 = new Chart(ctx3, {
+		    
+
+		type: 'bar',
+		    data: {
+		        labels: xlabels_data,
+
+		        datasets: [
+		        {
+		            label: 'Média Móvel 7 dias',
+		            data: line_novoscasos,
+		            backgroundColor: 'rgba(0, 99, 132, 0.4)',
+		           	borderColor: 'rgba(0, 99, 132, 0.8)',
+		            type: 'line',
+		             fill: false,
+		             radius: 1,
+
+		        },
+		        {
+		            label: 'Casos Novos',
+		            
+		            data: ylabels_novoscasos,
+		            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		                
+		            
+		            borderWidth: 2,
+		        },
+		        ]
+		    },
+		    options: {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    	pointRadius: 0,
+		        
+		            
+		            
+		        }
+		});
+
+
+			
+
+		var ctx2 = document.getElementById('grafico_novosobitos').getContext('2d');
+		var myChart2 = new Chart(ctx2, {
+		    type: 'bar',
+		    data: {
+		        datasets: [
+		        	{
+		            label: 'Média Móvel 7 dias',
+		            data: line_novosobitos,
+		           	borderColor: 'rgba(0, 99, 132, 0.8)',
+		            type: 'line',
+		             fill: false,
+		             radius: 1,
+		       		 },
+		        	{
+		            label: 'Óbitos Diários',
+		            data: ylabels_novosobitos,
+
+		            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		            borderWidth: 2,
+		        },
+
+		        ],
+		        labels: xlabels_data,
+		    },
+		    options:
+		    {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    }
+		    
+		});
+
+
+		var ctx4 = document.getElementById('grafico_totalcasos').getContext('2d');
+		var myChart4 = new Chart(ctx4, {
+		    type: 'bar',
+		    data: {
+		        datasets: [{
+		            label: 'Casos Totais',
+		            data: ylabels_totalcasos,
+
+		             backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		                
+		        }, ],
+		        labels: xlabels_data,
+		    },
+
+		    options:
+		    {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    }
+		    
+		});
+
+
+
+
+		var ctx5 = document.getElementById('grafico_totalobitos').getContext('2d');
+		var myChart5 = new Chart(ctx5, {
+		    type: 'bar',
+		    data: {
+		        datasets: [{
+		            label: 'Óbitos Totais',
+		            data: ylabels_totalobitos,
+
+		            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		        }, 
+		        ],
+		        labels: xlabels_data,
+		    },
+		    options:
+		    {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    }
+		    
+		});
+
+		var ctx10 = document.getElementById('grafico_casos_sepi').getContext('2d');
+		var myChart10 = new Chart(ctx10, {
+		    type: 'bar',
+		    data: {
+		        datasets: [{
+		            label: 'Casos por semana epidemiológica',
+		            data: ylabels_casos_semaepi,
+
+		            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		        }, 
+		        ],
+		        labels: xlabels_semanaepi1,
+		    },
+		    options:
+		    {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    }
+		    
+		});
+
+		var ctx11 = document.getElementById('grafico_obitos_sepi').getContext('2d');
+		var myChart11 = new Chart(ctx11, {
+		    type: 'bar',
+		    data: {
+		        datasets: [{
+		            label: 'Óbitos por semana epidemiológica',
+		            data: ylabels_obitos_semaepi,
+
+		            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		               
+		            
+		            borderColor: 'rgba(255, 99, 132, 1)',
+		        }, 
+		        ],
+		        labels: xlabels_semanaepi1,
+		    },
+		    options:
+		    {
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    }
+		});
+
+
+		var ocup_enfermaria = ylabels_ocupenfermaria[ylabels_ocupenfermaria.length-1];
+		var livre_enfermaria = 100-ocup_enfermaria;
+
+		var ctx6 = document.getElementById('grafico_leitosenfermaria').getContext('2d');
+		var myChart6 = new Chart(ctx6, 
+		{
+			 type: 'doughnut',
+		    data: {
+		        labels: ['% Ocupação dos Leitos', '% Leitos vagos'],
+		        datasets: [{
+		            label: '# of Votes',
+		            
+		            data: [ocup_enfermaria, livre_enfermaria],
+		            backgroundColor: [
+		                'rgba(255, 99, 132, 0.2)',
+		                
+		               
+		            ],
+		            borderColor: [
+		                'rgba(255, 99, 132, 1)',
+		                
+		            ],
+		            borderWidth: [1,0],
+		        }]
+		    },
+		    options: {
+
+		    	responsive: true,
+		    	maintainAspectRatio: false,
+		    
+		        
+		            
+		            
+		        }
+
+		}
+		)
+
+
+		var ocup_uti_ultimo = ylabels_ocuputi[ylabels_ocuputi.length-1];
+		var livre_uti_ultimo = 100-ocup_uti_ultimo;
+
+		var ctx7 = document.getElementById('grafico_leitosuti').getContext('2d');
+		var myChart7 = new Chart(ctx7, 
+		{
+			 type: 'doughnut',
+		    data: {
+		        labels: ['% Ocupação dos Leitos', '% Leitos vagos'],
+		        datasets: [{
+		            label: '# of Votes',
+		            
+		            data: [ocup_uti_ultimo, livre_uti_ultimo],
+		            backgroundColor: [
+		                'rgba(255, 99, 132, 0.2)',
+		                
+		               
+		            ],
+		            borderColor: [
+		                'rgba(255, 99, 132, 1)',
+		                
+		            ],
+		            borderWidth: [1,0],
+		        }]
+		    },
+		    options: {
+		        	responsive: true,
+		    	maintainAspectRatio: false,
+		            
+		            
+		        }
+
+		}
+		)
+
+		var dose_1_ultimo = ylabels_1dose[ylabels_1dose.length-1];
+		var dose_2_ultimo = ylabels_2dose[ylabels_2dose.length-1];
+		var doses_recebidas_ultimo = ylabels_dosesdistri[ylabels_dosesdistri.length-1];
+		var prop_popvacinada_1dose = ((dose_1_ultimo/368000)*100);
+		var prop_popvacinada_2dose = ((dose_2_ultimo/368000)*100);
+		var prop_vacinasaplicada = (((dose_2_ultimo+dose_1_ultimo)/doses_recebidas_ultimo)*100);
+		prop_popvacinada_1dose = prop_popvacinada_1dose.toFixed(2);
+		prop_popvacinada_2dose = prop_popvacinada_2dose.toFixed(2);
+		prop_vacinasaplicada = prop_vacinasaplicada.toFixed(2);
+
+
+		document.getElementById("1_dose").innerHTML = dose_1_ultimo;
+		document.getElementById("2_dose").innerHTML = dose_2_ultimo;
+		document.getElementById("prop_1_dose").innerHTML = "("+prop_popvacinada_1dose+"%)";
+		document.getElementById("prop_2_dose").innerHTML = "("+prop_popvacinada_2dose+"%)";
+		document.getElementById("prop_vacinasaplicadas").innerHTML = prop_vacinasaplicada+"%";
+
+
+
+
+
+
+		var ctx = document.getElementById('grafico_vacina').getContext('2d');
+		var myChart = new Chart(ctx, {
+		    type: 'horizontalBar',
+		  data: {
+		    labels: ['% da População vacinada'],
+		    datasets: [
+		      {
+		        label: '1º dose',
+		        data: [prop_popvacinada_1dose],
+		        backgroundColor: '#D6E9C6',
+		      },
+		      {
+		        label: 'Falta vacinar',
+		        data: [100-prop_popvacinada_1dose],
+		        backgroundColor: '#FAEBCC',
+		      }
+		    ]
+		  },
+		  options: {
+		  	responsive: true,
+		    	maintainAspectRatio: false,
+		    scales: {
+		      xAxes: [{ stacked: true }],
+		      yAxes: [{ stacked: true, 
+		      			ticks: {
+            autoSkip: false,
+            maxRotation: 0,
+            minRotation: 0,
+            padding: -200
+          }
+
+
+		      }]
+		    }
+		  }
+		        
+		    
+		});
+
+		}
+
+</script>
+</head>
+
+<body class="body">
+
+<div class="header">
+	<div class="logotipo">
+	<img src="logotipo.png" class="brasao">
+	</div>
+</div>
+
+
+<section>
+	<div class="contentor_topo3">
+	<div class="topo3">
+	<div><p class="titulo_topo">Portal Covid-19</p></div>
+		<div>
+		<p class="legenda_titulo">Prefeitura Municipal de São Vicente</p>
+		</div>
+	</div>
+</div>
+</section>
+<section>
+	<div class="container_cards">
+		<div class="card">
+			<div class="titulo_card">Casos Confirmados</div>
+			<div class="subcard">
+				
+					<div class="totalizador">
+						<span id="casos_novos" class="numeros"></span>
+						<span class="legenda">casos novos</span>
+					</div>
+					<div class="totalizador">
+						<span id="casos_totais" class="numeros"></span>
+						<span class="legenda">casos totais</span>
+					</div>
+				
+				
+					<div class="totalizador">
+						<div>
+						<span id="mmovel_casos" class="numeros"></span>
+						<span id="mmovel_casos_percent" class="numeros_mmovel_percent"></span>
+						</div>
+						<span class="legenda">média móvel</span>						
+					</div>
+					<div class="totalizador">
+						<span id="mmovel_casos_status" class="numero_mmovel_status"></span>
+						<span class="legenda">status</span>
+					</div>					
+				
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="titulo_card">Óbitos Confirmados</div>
+			<div class="subcard">
+				
+					<div class="totalizador">
+						<span id="obitos_novos" class="numeros"></span>
+						<span class="legenda">óbitos Novos</span>
+					</div>
+					<div class="totalizador">
+						<span id="obitos_totais" class="numeros"></span>
+						<span class="legenda">óbitos totais</span>
+					</div>
+				
+				
+					<div class="totalizador">
+						<div>
+						<span id="mmovel_obitos" class="numeros"></span>
+						<span id="mmovel_obitos_percent" class="numeros_mmovel_percent"></span>
+						</div>
+						<span class="legenda">média móvel</span>						
+					</div>
+					<div class="totalizador">
+						<span id="mmovel_obitos_status" class="numero_mmovel_status"></span>
+						<span class="legenda">status</span>
+					</div>					
+				
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="titulo_card">Indicadores</div>
+			<div class="subcard">
+				
+					<div class="totalizador">
+						<span id="letalidade" class="numeros"></span>
+						<span class="legenda">letalidade</span>
+					</div>
+
+					<div class="totalizador">
+						<span id="testes_totais" class="numeros"></span>
+						<span class="legenda">testes realizados</span>
+					</div>
+								
+					<div class="totalizador">
+						<span id="testes_ppositivos" class="numeros"></span>
+						<span class="legenda">testes realizados/positivos</span>						
+					</div>
+
+					<div class="totalizador">
+						<span id="idc_isolamento" class="numeros"></span>
+						<span class="legenda">índice de isolamento social</span>
+					</div>					
+				
+			</div>
+		</div>
+		
+	</div>
+		
+
+</section>
+
+
+<section>
+	<div class="container_graficos">
+		<div class="quuadro_graficos">
+			<div class="titulo_grafico"><p>Casos</p></div>
+			<div class="container">
+				<div class="subcontainer">
+					<canvas id="grafico_novoscasos"></canvas>
+				</div>
+				<div class="subcontainer">
+					<canvas id="grafico_totalcasos"></canvas>
+				</div>
+			</div>
+			<div class="legenda_fonte"><p>Fonte: Fundação SEADE.</p></div>
+		</div>
+	</div>
+</section>
+
+<div class="espaco_sessoes">
+</div>
+
+<section >
+	<div class="container_graficos">
+		<div class="quuadro_graficos">
+			<div class="titulo_grafico"><p>Óbitos</p></div>
+			<div class="container">
+				<div class="subcontainer">
+					<canvas id="grafico_novosobitos"></canvas>
+				</div>
+				<div class="subcontainer">
+					<canvas id="grafico_totalobitos"></canvas>	
+				</div>
+			</div>
+			<div class="legenda_fonte"><p>Fonte: Fundação SEADE.</p></div>
+		</div>
+	</div>
+
+</section>
+
+<div class="espaco_sessoes"></div>
+
+<section>
+	<div class="container_graficos">
+		<div class="quuadro_graficos">
+			<div class="titulo_grafico"><p>Semana Epidemiológica</p></div>
+				<div class="container">
+					<div class="subcontainer">
+						<canvas id="grafico_casos_sepi" ></canvas>
+					</div>
+					<div class="subcontainer">
+						<canvas id="grafico_obitos_sepi"></canvas>
+					</div>
+			</div>
+			<div class="legenda_fonte"><p>Fonte: Fundação SEADE.</p></div>
+		</div>
+	</div>
+</section>
+
+<div class="espaco_sessoes"></div>
+
+<section >
+	<div class="container_graficos">
+		<div class="quuadro_graficos">
+			<div class="titulo_grafico"><p>Vacinação</p></div>
+			<div class="container_vac">
+			
+				<div class = "subcontainer_vacinas">
+
+				
+					<div class="totalizador_vac">
+						<div>
+							<span id="1_dose" class="numero_vac"></span>				
+							<span id="prop_1_dose" class="numero2"></span>		
+						</div>
+						<span class="legenda_vac">1º doses aplicadas</span>	
+					</div>
+					
+					
+					<div class="totalizador_vac">
+						<div>
+							<span id="2_dose" class="numero_vac"></span>				
+							<span id="prop_2_dose" class="numero2"></span>		
+						</div>
+						<span class="legenda_vac">2º doses aplicadas</span>	
+					</div>
+
+					<div class="totalizador_vac">
+						<div>
+							<span id="prop_vacinasaplicadas" class="numero_vac"></span>				
+							</div>
+						<span class="legenda_vac">Propoção de vacinas aplicadas/recebidas</span>	
+					</div>
+
+				</div>
+
+				<div class="espaco_interno"></div>
+
+				<div class="grafico_vacina">
+					<canvas id="grafico_vacina"></canvas>
+				</div>
+			</div>
+
+			<div class="legenda_fonte"><p>Fonte: Secretaria de Saúde de São Vicente.</p></div>
+
+		</div>
+	</div>
+</section>
+
+<div class="espaco_sessoes"></div>
+
+
+<section>
+<div class="container_graficos">
+	<div class="quuadro_graficos">
+	<div class="titulo_grafico"><p>Leitos</p></div>
+	<div class="container">
+			<div class="subcontainer_leitos">
+				
+				<span class="legenda_leitos">Ocupação de Leitos de Enfermaria</span>
+				<div class="graficos_leitos">
+				<canvas id="grafico_leitosenfermaria"></canvas>
+				</div>
+			</div>
+
+			<div class="subcontainer_leitos">
+				
+				<span class="legenda_leitos">Ocupação de Leitos de UTI</span>
+				
+				<div class="graficos_leitos">
+				<canvas id="grafico_leitosuti"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="legenda_fonte"><p>Fonte: Secreataria de Saúde de São Vicente.</p></div>
+	</div>
+</div>
+</section>
+
+
+
+</body>
+</html>
